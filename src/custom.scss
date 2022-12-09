@@ -1,6 +1,11 @@
-$body-bg: #0a0e29;
+
+$body-bg: #d5dafce7;
+$body-color: #dbb13b;
 
 
 
 
 @import '~bootstrap/scss/bootstrap.scss';
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
