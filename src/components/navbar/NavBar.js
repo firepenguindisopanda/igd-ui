@@ -5,7 +5,7 @@ import './navbar.scss'
 const NavBar = () => {
   return (
     <nav className='navbar navbar-expand navbar-dark bg-dark head-nav p-2'>
-        <Link to={"/blogs"} className='navbar-brand'>
+        <Link to={"/"} className='navbar-brand'>
             IGD
         </Link>
         <div className='navbar-nav mr-auto'>
