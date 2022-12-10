@@ -1,0 +1,9 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import NavBar from './NavBar';
+
+test('renders link with IGD', () => {
+  render(<NavBar />);
+  const linkElement = screen.getByText(/IGD/i);
+  expect(linkElement).toBeInTheDocument();
+});
