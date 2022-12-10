@@ -1,9 +1,10 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import './navbar.scss'
 
 const NavBar = () => {
   return (
-    <nav className='navbar navbar-expand navbar-dark bg-dark'>
+    <nav className='navbar navbar-expand navbar-dark bg-dark head-nav p-2'>
         <Link to={"/blogs"} className='navbar-brand'>
             IGD
         </Link>
