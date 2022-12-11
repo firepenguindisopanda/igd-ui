@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BlogDataService from '../../services/blogs.service';
+import BlogDataService from '../../services/blog.service';
 
 const AddBlog = () => {
     const initialBlogState = {
