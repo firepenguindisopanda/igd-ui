@@ -5,4 +5,4 @@ React App to consume the igd-api and display information to the client
 
 - [ ] Setup component for list of blogs
 - [ ] Setup details component for blog
-- [ ] 
+- [ ] Decide on if to implement pagination
