@@ -6,6 +6,7 @@ import NavBar from './components/navbar/NavBar';
 import Home from './components/home/Home';
 import AddBlog from './components/addblog/AddBlog';
 import BlogList from './components/bloglist/BlogList';
+import Blogs from './components/blogs/Blogs';
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path="/addblog" element={<AddBlog />} />
           <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blogs/:id" element={<Blogs />} />
         </Routes>
       </div>
     </div>
