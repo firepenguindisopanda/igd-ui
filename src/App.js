@@ -5,6 +5,7 @@ import './App.scss';
 import NavBar from './components/navbar/NavBar';
 import Home from './components/home/Home';
 import AddBlog from './components/addblog/AddBlog';
+import BlogList from './components/bloglist/BlogList';
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/addblog" element={<AddBlog />} />
+          <Route path="/blogs" element={<BlogList />} />
         </Routes>
       </div>
     </div>
