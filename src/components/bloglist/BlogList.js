@@ -107,7 +107,7 @@ const BlogList = () => {
         >
             {
                 currentBlog ? (
-                    <div>
+                    <div className='blog-display'>
                         <h4>Blog</h4>
                         <div>
                             <label>
