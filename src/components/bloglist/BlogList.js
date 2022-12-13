@@ -124,6 +124,12 @@ const BlogList = () => {
                         </div>
                         <div>
                             <label>
+                                <strong>URL:</strong>
+                            </label>{' '}
+                            {currentBlog.url}
+                        </div>
+                        <div>
+                            <label>
                                 <strong>Status:</strong>
                             </label>{' '}
                             {currentBlog.published ? 'Published' : 'Pending'}
