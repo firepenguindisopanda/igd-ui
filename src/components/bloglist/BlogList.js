@@ -73,7 +73,7 @@ const BlogList = () => {
                 />
                 <div className='input-group-append'>
                     <button 
-                    className='btn btn-outline-secondary' 
+                    className='btn btn-primary' 
                     type='button' 
                     onClick={findByTitle}>
                         Search for Blogs
@@ -130,7 +130,7 @@ const BlogList = () => {
                         </div>
                         <Link
                         to={'/blogs/' + currentBlog.id}
-                        className='badge badge-warning'
+                        className='badge badge-warning text-primary'
                         >
                             Edit Blog
                         </Link>
