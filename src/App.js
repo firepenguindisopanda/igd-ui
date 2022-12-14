@@ -7,6 +7,7 @@ import Home from './components/home/Home';
 import AddBlog from './components/addblog/AddBlog';
 import BlogList from './components/bloglist/BlogList';
 import Blogs from './components/blogs/Blogs';
+import Login from './components/loginform/LoginForm';
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/addblog" element={<AddBlog />} />
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/:id" element={<Blogs />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
