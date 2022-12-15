@@ -17,6 +17,8 @@ import { logout } from './actions/auth';
 import { clearMessage } from './actions/message';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import RegisterPage from './pages/register/RegisterPage';
+import AuthVerify from './common/auth-verify';
+import eventBus from './common/EventBus';
 
 function App() {
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -42,13 +44,21 @@ function App() {
       setShowModeratorBoard(false);
       setShowAdminBoard(false);
     }
-  }, [currentUser]);
+
+    eventBus.on("logout", () => {
+      logOut();
+    });
+    return () => {
+      eventBus.remove("logout");
+    };
+  }, [currentUser, logOut]);
   return (
     <div className='container-fluid'>
       <NavBar currentUser={currentUser} showMod={showModeratorBoard} showAdmin={showAdminBoard} logOut={logOut}/>
       <div className='container mt-3'>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path="/addblog" element={<AddBlog />} />
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/:id" element={<Blogs />} />
@@ -60,6 +70,7 @@ function App() {
           <Route path="/user" element={<BoardUser />} />
         </Routes>
       </div>
+      <AuthVerify logOut={logOut}/>
     </div>
   );
 }
