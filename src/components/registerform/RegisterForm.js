@@ -95,6 +95,60 @@ const RegisterForm = () => {
           alt='profile-img'
           className='profile-img-card'
         />
+        <Form onSubmit={handleRegister} ref={form}>
+          {
+            !successful && (
+              <div>
+                <div className='form-group'>
+                  <label htmlFor='username'>Username</label>
+                  <Input
+                    type='text'
+                    className='form-control'
+                    name='username'
+                    value={username}
+                    onChange={onChangeUsername}
+                    validations={[required, verifyUsername]}
+                  />
+                </div>
+                <div className='form-group'>
+                  <label htmlFor='email'>Email</label>
+                  <Input
+                    type='text'
+                    className='form-control'
+                    name='email'
+                    value={email}
+                    onChange={onChangeEmail}
+                    validations={[required, verifyEmail]}
+                  />
+                </div>
+                <div className='form-group'>
+                  <label htmlFor='password'>Password</label>
+                  <Input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={password}
+                  onChange={onChangePassword}
+                  validations={[required, verifyPassword]}
+                  />
+                </div>
+                <div className='form-group'>
+                  <button className='btn btn-primary btn-block'>Sign Up</button>
+                </div>
+              </div>
+            )
+          }
+          {
+            message && (
+              <div className='form-group'>
+                <div className={successful ? "alert alert-success" : "alert alert-danger"}>
+                  {message}
+                </div>
+              </div>
+            )
+          }
+          <CheckButton style={{ display: "none" }} ref={checkBtn} />
+        </Form>
       </div>
     </div>
   )
