@@ -7,8 +7,9 @@ import Home from './components/home/Home';
 import AddBlog from './components/addblog/AddBlog';
 import BlogList from './components/bloglist/BlogList';
 import Blogs from './components/blogs/Blogs';
-import Login from './components/loginform/LoginForm';
+import LoginPage from './pages/login/LoginPage';
 import { Routes, Route } from 'react-router-dom'
+import RegisterPage from './pages/register/RegisterPage';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path="/addblog" element={<AddBlog />} />
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/:id" element={<Blogs />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </div>
     </div>
