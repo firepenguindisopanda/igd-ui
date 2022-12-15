@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Profile = () => {
-    const { user: currentUser } = useSelector();
+    const { user: currentUser } = useSelector((state) => state.auth);
 
     if(!currentUser){
         return <Navigate to="/login" />
@@ -29,12 +29,12 @@ const Profile = () => {
             </div>
         </div>
         <div className='row'>
-            <div className='col-md-4'>
+            <div className='col-md-4 fs-2'>
                 <p>
                     <strong>Email: </strong>{currentUser.email}
                 </p>
             </div>
-            <div className='col-md-8'>
+            <div className='col-md-8 fs-2'>
                 <strong>Authorities:</strong>
                 <ul>
                     {
