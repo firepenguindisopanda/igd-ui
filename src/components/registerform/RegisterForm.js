@@ -59,6 +59,34 @@ const RegisterForm = () => {
   const [successful, setSuccessful] = useState(false);
   const { message } = useSelector(state => state.message);
   const dispatch = useDispatch();
+  const onChangeUsername = (e) => {
+    const username = sanitizeInput(e.target.value);
+    setUsername(username);
+  };
+  const onChangeEmail = (e) => {
+    const email = sanitizeInput(e.target.value);
+    setEmail(email);
+  }
+  const onChangePassword = (e) => {
+    const password = sanitizeInput(e.target.value);
+    setPassword(password);
+  }
+  const handleRegister = (e) => {
+    e.preventDefault();
+    setSuccessful(false);
+    form.current.validateAll();
+    if(checkBtn.current.context._errors.length === 0){
+      dispatch(register(username, email, password))
+        .then(() => {
+          setSuccessful(true);
+        })
+        .catch(() => {
+          setSuccessful(false);
+        });
+    }
+  }
+
+
   return (
     <div>RegisterForm</div>
   )
