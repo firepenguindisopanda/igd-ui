@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 const Profile = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
-
     if(!currentUser){
         return <Navigate to="/login" />
     }
@@ -38,6 +37,7 @@ const Profile = () => {
                 <strong>Authorities:</strong>
                 <ul>
                     {
+                        
                         currentUser.roles &&
                         currentUser.roles.map((role, index) => 
                         <li key={index}>{role}</li>)
